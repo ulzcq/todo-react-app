@@ -28,7 +28,7 @@ function App() {
     <Paper style={{ margin: 16 }}>
       <List>
         {items.map((item) => (
-          <Todo item={item} key={item.id} editItem={editItem}/>
+          <Todo item={item} key={item.id} editItem={editItem} deleteItem={deleteItem} />
         ))}
       </List>
     </Paper>
