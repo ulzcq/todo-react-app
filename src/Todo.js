@@ -26,7 +26,7 @@ const Todo = (props) => {
     };
 
     const turnOnReadOnly = (e) => {
-        if(e.key == "Enter"){
+        if(e.key === "Enter" && readOnly === false){
             setReadOnly(true);
         }
     };
@@ -37,12 +37,6 @@ const Todo = (props) => {
 
     const deleteEventHandler = () => {
         deleteItem(item);
-    };
-
-    const enterKeyEventHandler = (e) => {
-        if(e.key == 'Enter') {
-            this.setState({ readOnly: true})
-        }
     };
 
     return(

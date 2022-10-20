@@ -34,12 +34,14 @@ function App() {
     </Paper>
   );
 
-  return <div className="App">
+  return(
+    <div className="App">
     <Container maxWidth="md">
-      <AddTodo addItem={addItem} deleteItem={deleteItem}/>
+      <AddTodo addItem={addItem} />
       <div className="TodoList">{todoItems}</div>
     </Container>
-  </div>;
+  </div>
+  );
 }
 
 export default App;
