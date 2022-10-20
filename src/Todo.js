@@ -17,17 +17,21 @@ const Todo = (props) => {
 
     const checkboxEventHandler = (e) => {
         item.done = e.target.checked;
-        editItem();
+        editItem(item);
     }
 
     const editEventHandler = (e) => {
-        item.title = e.target.value;
-        editItem(); //다시 렌더링
+        setItem({...item, title: e.target.value});
+
+        // item.title = e.target.value;
+        // editItem(); //다시 렌더링
     };
 
+    //엔터키를 누르는 순간 http요청 보냄
     const turnOnReadOnly = (e) => {
         if(e.key === "Enter" && readOnly === false){
             setReadOnly(true);
+            editItem(item);
         }
     };
 
